@@ -58,6 +58,11 @@ public class Day02_Xpath {
         WebElement tumTextler = driver.findElement(By.tagName("body"));
             System.out.println(tumTextler.getText());
 
-
+//            Lambda ile
+        List<WebElement> allTextsInBody = driver.findElements(By.tagName("body"));
+        allTextsInBody.
+                stream().
+                distinct().
+                forEach(t-> System.out.println(t.getText()));
     }
 }
