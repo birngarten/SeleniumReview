@@ -28,7 +28,7 @@ public class Day03_Dropdown {
         WebElement dropDown = driver.findElement(By.id("searchDropdownBox"));
         Select select = new Select(dropDown);
         // seçili olan option(seçimi) alabiliriz.
-        select.getFirstSelectedOption();
+        select.getFirstSelectedOption(); //dropdown'a basildiktan sonra cikan ilk elemnt'i bize verir
         // biz farklı bir kategori seçmek istersek ?
         // 3 farklı seçeneğimiz var
         // 1. selectByVisibleText
@@ -56,12 +56,11 @@ public class Day03_Dropdown {
         for(WebElement w : tumSecenekler){
             System.out.println(w.getText());
         }
+
         System.out.println("Tum Kategori Sayisi" + tumSecenekler.size());
+
         // sadece seçilen seçeneği bize return eder.
         WebElement secili = select.getFirstSelectedOption();
-        System.out.println("Şuan Seçili Olan : " + secili.getText());
-
-
-
+        System.out.println("Şuan Seçili Olan : " + secili.getText()); //Computers
     }
 }
